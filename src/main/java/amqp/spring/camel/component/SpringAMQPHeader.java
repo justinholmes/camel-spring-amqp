@@ -23,6 +23,10 @@ public class SpringAMQPHeader {
             String headerKey = headerEntry.getKey();
             Object headerValue = headerEntry.getValue();
             
+            if(headerValue == null) {
+            	continue;
+            }
+            
             //Not switching on a string since we want to support Java >= 1.6
             if(CONTENT_ENCODING.equals(headerKey)) {
                 msg.getMessageProperties().setContentEncoding(headerValue.toString());
