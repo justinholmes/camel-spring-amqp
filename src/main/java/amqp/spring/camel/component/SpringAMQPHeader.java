@@ -30,8 +30,8 @@ public class SpringAMQPHeader {
             //Not switching on a string since we want to support Java >= 1.6
             if(CONTENT_ENCODING.equals(headerKey)) {
                 msg.getMessageProperties().setContentEncoding(headerValue.toString());
-            } else if(CONTENT_TYPE.equals(headerKey)) {
-                msg.getMessageProperties().setContentEncoding(headerValue.toString());
+            //} else if(CONTENT_TYPE.equals(headerKey)) {
+            //    msg.getMessageProperties().setContentEncoding(headerValue.toString());
             } else if(CORRELATION_ID.equals(headerKey)) {
                 msg.getMessageProperties().setCorrelationId(headerValue.toString().getBytes());
             } else if(EXPIRATION.equals(headerKey)) {
